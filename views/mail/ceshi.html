@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{{.Name}}</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="/static/css/wrongpage.css">
+</head>
+<body>
+</body>
+<div    style='background-color:#d0d0d0;background-image:url(http://weixin.qq.com/zh_CN/htmledition/images/weixin/letter/mmsgletter_2_bg.png);text-align:center;padding:40px;'>
+          <div class='mmsgLetter' style='width:580px;margin:0 auto;padding:10px;color:#333;background-color:#fff;border:0px solid #aaa;border-radius:5px;-webkit-box-shadow:3px 3px 10px #999;-moz-box-shadow:3px 3px 10px #999;box-shadow:3px 3px 10px #999;font-family:Verdana, sans-serif; '>
+
+       <div style='height:23px;background:url(http://weixin.qq.com/zh_CN/htmledition/images/weixin/letter/mmsgletter_2_bg_topline.png) repeat-x 0 0;'>
+        </div>
+        <div style='text-align:left;padding:30px;font-size:14px;line-height:1.5;background:url(http://10.1.2.200/Public/images/mmsgletter_2_bg_wmark.jpg) no-repeat top right;'>
+        <div>
+        <p style='font-weight:bold;'>
+            Hi,<span >{{.Email}}</span>：
+        </p>
+        <p>点击链接，激活账户！<br>
+              <a href='{{.Url}}' style='word-break:break-all;word-wrap:break-word;display:block' target='_blank'>{{.Url}}</a><br>{{.Types}}<br>如果这不是您的邮件请忽略，很抱歉打扰您，请原谅。
+        </p>
+        </div>
+        </div>
+        </div>
+        </div>
+</body>
+</html>
