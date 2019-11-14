@@ -5,6 +5,8 @@ import (
 	"exernew/controllers"
 	_ "exernew/routers"
 	"fmt"
+	"os/exec"
+	"runtime"
 	"strings"
 	"time"
 
@@ -18,7 +20,29 @@ type A struct {
 	Hardware string
 }
 
+var commands = map[string]string{
+	"windows": "start",
+	"darwin":  "open",
+	"linux":   "xdg-open",
+}
+
+func Open(uri string) error {
+	fmt.Println("=-=-=-33---")
+	fmt.Println(runtime.GOOS)
+	run, ok := commands[runtime.GOOS]
+	if !ok {
+		return fmt.Errorf("don't know how to open things on %s platform", runtime.GOOS)
+	}
+	fmt.Println("=-=-=-22---")
+
+	cmd := exec.Command(run, uri)
+	fmt.Println("=-=-=cmd-22---")
+	fmt.Println(cmd)
+	return cmd.Start()
+}
+
 func main() {
+	Open("http://baidu.com")
 	// controllers.WebSocket()
 	// go pi_pie()
 	// controllers.Balance()

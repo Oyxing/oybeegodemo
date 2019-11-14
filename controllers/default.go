@@ -21,6 +21,24 @@ func init() {
 
 }
 
+// type Page struct {
+// 	PageNo     int
+// 	PageSize   int
+// 	TotalPage  int
+// 	TotalCount int
+// 	FirstPage  bool
+// 	LastPage   bool
+// 	List       interface{}
+// }
+
+// func PageUtil(count int, pageNo int, pageSize int, list interface{}) Page {
+// 	tp := count / pageSize
+// 	if count%pageSize > 0 {
+// 		tp = count/pageSize + 1
+// 	}
+// 	return Page{PageNo: pageNo, PageSize: pageSize, TotalPage: tp, TotalCount: count, FirstPage: pageNo == 1, LastPage: pageNo == tp, List: list}
+// }
+
 // func (u Users) ReflectCall(name string, age int64) {
 // 	fmt.Println("name:", name, "age:", age, "user.name", u.Name)
 // }
@@ -75,15 +93,15 @@ func Updatelogo(c *MainController, topfilename, filetype string) string {
 }
 
 func jwts() {
-	Info := d.Info{
-		"name",
-		"",
-		time.Now(),
-	}
-	pp, err := Info.CreateToken("name")
-	fmt.Println(pp)
-	fmt.Println(err)
-	Parsetoken(pp)
+	// Info := d.Info{
+	// 	"name",
+	// 	"",
+	// 	time.Now(),
+	// }
+	// pp, err := Info.CreateToken("name")
+	// fmt.Println(pp)
+	// fmt.Println(err)
+	// Parsetoken(pp)
 }
 
 func Parsetoken(Token string) {

@@ -15,6 +15,7 @@ type Access_token struct {
 	AccessToken  string `json:"access_token"`
 	ExpiresIn    int    `json:"expires_in"`
 	RefreshToken string `json:"refresh_token"`
+	SessionKey   string `json:"session_key"`
 	Openid       string
 	Scope        string
 	Unionid      string

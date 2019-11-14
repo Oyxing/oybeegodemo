@@ -31,7 +31,7 @@ func (c *WxpayController) Native() {
 	// }
 	// orderid := string(order_id_str)
 	// order := models.QueryOrderInfoById(orderid)
-	//orderNumber := this.Ctx.Input.Param(":id") //获取订单号
+	// orderNumber := this.Ctx.Input.Param(":id") //获取订单号
 	// orderNumber := order.Order_sn
 	// payAmount := order.Total_fee
 	params := make(map[string]interface{})
@@ -42,6 +42,7 @@ func (c *WxpayController) Native() {
 	params["attach"] = "www.idcyw.cn" //自定义参数
 	var modwx Wxpay.UnifyOrderReq
 	res := modwx.CreateOrder(c.Ctx, params)
+	fmt.Println("%+v", res)
 	c.Data["data"] = res
 	//fmt.Println(res)
 	//统一下单后生成数据，转成二维码。
@@ -56,6 +57,7 @@ func (c *WxpayController) Native() {
 
 }
 
+// 调用时  订单号 与 订单信息 需要一至  (订单号可变)
 func (c *WxpayController) Notify() {
 	var notifyReq Wxpay.WXPayNotifyReq
 	res := notifyReq.WxpayCallback(c.Ctx)
